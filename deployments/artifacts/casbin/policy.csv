@@ -1,0 +1,3 @@
+p, anonymous, /api/v1/account/sign-in, POST
+p, anonymous, /api/v1/account/sign-up, POST
+p, account, /api/v1/account/*, (GET)|(POST)|(PUT)|(DELETE)

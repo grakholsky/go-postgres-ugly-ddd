@@ -1,0 +1,34 @@
+version: '3.7'
+
+volumes:
+  db-api:
+
+services:
+
+  envoy:
+    image: envoyproxy/envoy-alpine:latest
+    depends_on:
+      - api
+    ports:
+      - 8080:8080
+      - 9901:9901 # admin
+    volumes:
+      - ./artifacts/envoy/:/etc/envoy/
+
+  api:
+    image: api
+    depends_on:
+      - db
+    env_file:
+      - etc/.env
+    volumes:
+      - ./artifacts:/artifacts
+
+  db:
+    image: postgres:12-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - db-api:/var/lib/postgresql/data
+    env_file:
+      - etc/.env
