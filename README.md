@@ -1,5 +1,5 @@
-# go-postgres
-REST API
+# Go Postgres (Ugly DDD)
+The wrong dependency injection implementation in Go
 
 ## Features
 - **Language**: [golang](https://golang.org/doc/install#install)
