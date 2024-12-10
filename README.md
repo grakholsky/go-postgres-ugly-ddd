@@ -1,4 +1,4 @@
-# Go Postgres (Ugly DDD)
+# Go Postgres (Wrong DDD)
 The wrong dependency injection implementation in Go
 
 ## Features
